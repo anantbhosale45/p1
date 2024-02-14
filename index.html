@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title> square root app by anant</title>
+	<style>
+		* {font-size:50px; font-family:century; }
+		body { background-color:azure; }
+		h1{background-color:black; color:white; width:60%; border-radius:40 px;}
+	</style>
+	<script>
+		function compute()
+		{
+		event.preventDefault();
+		let num = document.getElementById("id_num");
+		let msg = document.getElementById("id_msg");
+
+		if (num.value =="")
+		{
+			alert("number is empty");
+			msg.innerHTML ="";
+			num.focus();
+			return;
+		}
+		
+		let n = parseFloat(num.value);
+		if (n < 0)
+		{
+			alert("- ve number is not allowed");
+			msg.innerHTML ="";
+			num.focus();
+			return;
+		}
+		
+
+		let r = Math.sqrt(n);
+		let ans =" square root = " +r.toFixed(2);
+		msg.innerHTML = ans;
+		}
+	</script>
+</head>
+<body>
+<center>
+
+	<h1> Square root finder </h1>
+	<form onsubmit="compute()">
+		<input type="number" placeholder ="enter number" id="id_num"/>
+		<br><br>
+		<input type="submit" value="find square root"/>
+	</form>
+	<h2 id="id_msg"/>
+
+</center>
+</body>
+</html
